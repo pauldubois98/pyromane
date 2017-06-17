@@ -1,0 +1,160 @@
+header{
+    z-index: 0;
+    margin-left: 0;
+}
+
+h1{
+    margin: 0.1em;
+    padding: 0.1em;
+    text-align: center;
+    color: green;
+    font-size: 1.6em;
+}
+h3{
+    margin: 0.1em;
+    padding: 0.1em;
+    text-align: center;
+    color: black;
+    font-size: 1.3em;
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px, #000000 0px 1px, #000000 1px 0px, #000000 0px -1px, #000000 -1px 0px, #000000 0.5px 0.5px, #000000 -0.5px 0.5px, #000000 -0.5px -0.5px, #000000 0.5px -0.5px, #000000 0px 0.5px, #000000 0.5px 0px, #000000 0px -0.5px, #000000 -0.5px 0px, #000000 0.75px 0.75px, #000000 -0.75px 0.75px, #000000 -0.75px -0.75px, #000000 0.75px -0.75px, #000000 0px 0.75px, #000000 0.75px 0px, #000000 0px -0.75px, #000000 -0.75px 0px, #000000 0.25px 0.25px, #000000 -0.25px 0.25px, #000000 -0.25px -0.25px, #000000 0.25px -0.25px, #000000 0px 0.25px, #000000 0.25px 0px, #000000 0px -0.25px, #000000 -0.25px 0px;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+#canvas{
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    background-color: saddlebrown;
+}
+#temps{
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;   
+}
+
+
+
+#resultats{
+    z-index: 1;
+    position: fixed;
+    top: 5.9em;
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+    display: none;
+}
+#center{
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+#left{
+    margin-right: 5px;
+}
+#left p{
+    text-align: right;
+}
+#right{
+    margin-left: 5px;
+}
+h2{
+    padding: 0;
+    margin: 0;
+    font-size: 1.6em;
+    text-align: center;
+    text-decoration: underline;
+}
+p{
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
+    font-weight: bolder;
+}
+.centered{
+    text-align: center;
+    font-size: 1em;
+}
+#score{
+    color: red;
+    font-size: 4em;
+    font-weight: 900;
+}
+#titre2{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+
+
+
+
+#reglages{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    width:100%;
+    
+    position: fixed;
+    bottom: 2.1em;
+    
+}
+#cadre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 0.1em;
+    
+    border: 2px grey dashed;
+}
+label{
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    background-color: lightgray;
+}
+#cote_txt{
+    height: 1em;
+}
+#default_cote{
+    height: 1.5em;
+    font-size: 0.8em;
+}
+#cote_txt{
+    width:3em;
+}
+
+
+
+
+
+#commandes{
+    margin: 0;
+    padding: 0;
+    
+    z-index: 10;
+    width: 100%;
+    
+    position: fixed;
+    bottom: 0;
+    
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+#start{
+    font-size: 1.4em;
+    background-color: lightcoral;
+    color: darkred;
+}
+#nvPartie{
+    font-size: 1.4em;
+    background-color: lightsalmon;
+    color: #A22;
+}

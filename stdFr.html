@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Jeu du pyromane</title>
+        <link rel="stylesheet" href="std.css" />
+    </head>
+    <body>
+        <header>
+            <h1 id='title'>Jeu du pyromane</h1>
+        </header>
+        <canvas id="canvas">
+            Canvas non supporté
+        </canvas>
+        
+        <section id="resultats">
+            <h2>Statistiques:</h2>
+            <div id="center">
+                <div id="left">
+                    <p id="cases_cote">côté de la fôret</p>
+                    <p id="arbres_debut">arbres au début</p>
+                    <p id="arbres_brules">arbres brûlés</p>
+                    <p id="feux_utilises">feux utilisés</p>
+                </div>
+                <div id="right">
+                    <p id="cases_total">cases en tout</p>
+                    <p id="arbres_fin">arbres à la fin</p>
+                    <p id="pourcent_brules">% brûlés</p>
+                    <p id="brules_par_feu">brûlés/feu</p>
+                </div>
+            </div>
+            <h2 id="titre2">Score:</h2>
+            <p class="centered" id="score">0</p>
+            <p class="centered" id="calcul">(0-3*0)</p>
+            <p class="centered"><em>(arbres brûlés-côté/2*feux utilisés)</em></p>
+                
+        </section>
+        
+        <section id="reglages">
+            <div id="cadre">
+                <label>Côté:</label>
+                <input type="range" min=4 max=50 step=2 id="cote" value=20 onchange="newRange()">
+                <input type="number" value="20" id="cote_txt" onchange="newTxt()">
+                <button id="default_cote">Défaut</button>
+            </div>
+            
+        </section>
+        
+        <section id=commandes>
+            <button id="start">Lancer!</button>
+            <button id="nvPartie">Nouvelle Partie</button>
+        </section>
+        
+        <audio src="alumette.mp3" id="audioAlumette"></audio>
+        
+        
+    </body>
+    
+    
+    <script src="stdFr.js"></script>
+</html>

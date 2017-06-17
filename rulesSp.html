@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>El Incendiario Juego</title>
+        <link rel="stylesheet" href="rules.css" />
+    </head>
+    <body>
+        <div id='all'>
+            <div class="center"><img alt="icone" src="icone.png" id="icone"></div>
+            <h1>El Incendiario Juego</h1>
+            <p class="paragraphe">En este juego juegas como un pirómano que quiere quemar un bosque. Pero eres un pirómano perezoso por eso, quiresencender tanto menos fuegos cuanto que más árbores lo vas quemando.</p>
+            <p class="paragraphe"><strong>Reglas de propagación del fuego;</strong></p>
+            <p class="paragraphe">Un árbore (cuadrado verde) se prende fuego sólo si es adyacente (adyacente a un lado) a un fuego (cuadrado rojo).</p>
+            <div class="center"><img alt="explicationGIF" src="demo.gif" id="expl"></div>
+            <p class="paragraphe"><strong>La colocación de los incendios:</strong></p>
+            <p class="paragraphe">El jugador, pirómano, debe colocar estrategicamente el fuego o los fuegos que va a encender para iniciar el incendio (cuadrado naranja).</p>
+            <p class="paragraphe"><em>Juego estandar:</em></p>
+            <p class="paragraphe">Cuando se inicia el fuego, cada árbol quemado gana 1 punto, mientras que cada fuego initial colocado por el jugador lo hace perder puntos (10 por defecto).</p>
+            <p class="paragraphe"><em>Un fuego:</em></p>
+            <p class="paragraphe">El jugador pirómano tiene 5 segundos para colocar un único inicio casa para quemar árboles.</p>
+            <p class="paragraphe"><em>Configuraciones:</em></p>
+            <p class="paragraphe">Es posible ajustar las dimensiones del bosque. <br>
+            Por defecto, es un bosque de 20 lado de cuadrado.</p>
+            
+            
+            
+            
+            
+            <div id="space"></div>
+            
+            <div id="bts">
+                <p class="bt" id="bt1"><a> Retorno </a></p>
+                <p class="bt" id="bt2"><a> Acerca de... </a></p>
+            </div>
+            
+        </div>
+            
+        <script src="jquery-3.2.0.min.js"></script>
+        <script src="rulesSp.js"></script>
+    </body>
+</html>

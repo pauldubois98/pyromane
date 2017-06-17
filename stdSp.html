@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>El Incendiario Juego</title>
+        <link rel="stylesheet" href="std.css" />
+    </head>
+    <body>
+        <header>
+            <h1 id='title'>El Incendiario Juego</h1>
+        </header>
+        <canvas id="canvas">
+            Canvas sin apoyo
+        </canvas>
+        
+        <section id="resultats">
+            <h2>Estadística:</h2>
+            <div id="center">
+                <div id="left">
+                    <p id="cases_cote">lado del fresadora</p>
+                    <p id="arbres_debut">árboles al comienzan</p>
+                    <p id="arbres_brules">árboles quemados</p>
+                    <p id="feux_utilises">fuegos utilizados</p>
+                </div>
+                <div id="right">
+                    <p id="cases_total">cuadrados en todos</p>
+                    <p id="arbres_fin">árboles al final</p>
+                    <p id="pourcent_brules">% quemado</p>
+                    <p id="brules_par_feu">quemados/fuego</p>
+                </div>
+            </div>
+            <h2 id="titre2">Puntuación:</h2>
+            <p class="centered" id="score">0</p>
+            <p class="centered" id="calcul">(0-3*0)</p>
+            <p class="centered"><em>(árboles quemados-lado/2*fuegos utilizados)</em></p>
+                
+        </section>
+        
+        <section id="reglages">
+            <div id="cadre">
+                <label>Lado:</label>
+                <input type="range" min=4 max=50 step=2 id="cote" value=20 onchange="newRange()">
+                <input type="number" value="20" id="cote_txt" onchange="newTxt()">
+                <button id="default_cote">Defecto</button>
+            </div>
+            
+        </section>
+        
+        <section id=commandes>
+            <button id="start">Lanzar!</button>
+            <button id="nvPartie">Nuevo Juego</button>
+        </section>
+        
+        <audio src="alumette.mp3" id="audioAlumette"></audio>
+        
+        
+    </body>
+    
+    
+    <script src="stdSp.js"></script>
+</html>

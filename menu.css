@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'feu';
+    src: url('flaming_tears.ttf');
+}
+@font-face {
+    font-family: 'feuBis';
+    src: url('black_fire.ttf');
+}
+@font-face {
+    font-family: 'feuTer';
+    src: url('Flame.ttf');
+}
+
+
+h1{
+    text-align: center;
+    font-family: feu;
+    margin-top: 0.5em;
+    margin-bottom: 1.1em;
+    font-size: 2.1em;
+    font-weight: normal;
+    color: dimgrey;
+}
+#allBlanc{
+    z-index: 0;
+    position: absolute;
+    top:0;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+#allNoir{
+    z-index: 0;
+    position: absolute;
+    top:0;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+p{
+    font-family: feu;
+/*    font-weight: bold;*/
+    padding: 0.8em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: auto;
+    margin-top: 2em;
+    font-size: 0.7em;
+    text-align: center;
+    
+    width: 12em;
+    border-radius: 4em;
+    border: 2px white solid;
+
+}
+a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+#bt1{
+    background: red;
+}
+#bt2{
+    background: orange;
+}
+#bt3{
+    background: grey;
+}
+#bt4{
+    background: black;
+}
+
+
+img{
+    z-index: -10;
+    position: absolute;
+    width: 4.5em;
+    top: 9em;
+    
+}
+#flame1{
+    left: 0;
+}
+
+#flame2{
+    right: 0;
+    transform:  matrix(-1, 0, 0, 1, 0, 0);
+}

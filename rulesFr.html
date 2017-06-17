@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Jeu du pyromane</title>
+        <link rel="stylesheet" href="rules.css" />
+    </head>
+    <body>
+        <div id='all'>
+            <div class="center"><img alt="icone" src="icone.png" id="icone"></div>
+            <h1>Jeu du pyromane</h1>
+            <p class="paragraphe">Dans ce jeu, vous incarnez un pyromane qui veut faire flamber la forêt. Mais vous êtez un pyromane paresseux, vous voulez donc allumer le moins de feux possible, tout en brûlant un maximum d'arbres.</p>
+            <p class="paragraphe"><strong>Règles de propagation de l'incendie:</strong></p>
+            <p class="paragraphe">Un arbre (carré vert) prend feu seulement s'il est adjacent (1 côté adjacent) à un feu (carré rouge).</p>
+            <div class="center"><img alt="explicationGIF" src="demo.gif" id="expl"></div>
+            <p class="paragraphe"><strong>Placement des foyers:</strong></p>
+            <p class="paragraphe">Le joueur, pyromane, doit placer judicieusement un ou plusieurs foyers de départ de feu (carré orange).</p>
+            <p class="paragraphe"><em>Partie standard:</em></p>
+            <p class="paragraphe">Lorsque l'incendie est lancé, chaque arbre brûlé rapporte 1 point, alors que chaque foyer placé vous fait perdre des points (10 par défaut).</p>
+            <p class="paragraphe"><em>Un seul feu:</em></p>
+            <p class="paragraphe">Le joueur pyromane a 5 secondes pour placer un seul foyer de départ afin de brûler un maximum d'arbres.</p>
+            <p class="paragraphe"><em>Réglages:</em></p>
+            <p class="paragraphe">Il est possible de régler les dimensions de la forêt.<br>
+            Par défaut, c'est une forêt de 20 carrés de côté.</p>
+            
+            
+            
+            
+            
+            <div id="space"></div>
+            
+            <div id="bts">
+                <p class="bt" id="bt1"><a> Retour </a></p>
+                <p class="bt" id="bt2"><a> A propos... </a></p>
+            </div>
+            
+        </div>
+            
+        <script src="jquery-3.2.0.min.js"></script>
+        <script src="rulesFr.js"></script>
+    </body>
+</html>

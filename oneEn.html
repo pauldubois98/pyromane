@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The Pyromaniac Game</title>
+        <link rel="stylesheet" href="one.css" />
+    </head>
+    <body>
+        <header>
+            <h1 id='title'>The Pyromaniac Game</h1>
+            <h3 id='subtitle'> - <span style="color:green">1</span> <span style="color:orange">f</span><span style="color:red">i</span><span style="color:grey">r</span><span style="color:white">e</span> - </h3>
+        </header>
+        <canvas id="canvas">
+            Canvas not supported
+        </canvas>
+        <p id="temps">5</p>
+        
+        <section id="resultats">
+            <h2>Statistics:</h2>
+            <div id="center">
+                <div id="left">
+                    <p id="cases_cote">side of the forest</p>
+                    <p id="arbres_debut">trees at the beginning</p>
+                    <p id="arbres_brules">burned trees</p>
+                    <p id="feux_utilises">fires used</p>
+                </div>
+                <div id="right">
+                    <p id="cases_total">square in all</p>
+                    <p id="arbres_fin">trees at the end</p>
+                    <p id="pourcent_brules">% burned</p>
+                    <p id="brules_par_feu">burned/fire</p>
+                </div>
+            </div>
+            <h2 id="titre2">Score:</h2>
+            <p class="centered" id="score">0</p>
+            <p class="centered" id="calcul">(0-3*0)</p>
+            <p class="centered"><em>(burned trees-side/2*fires used)</em></p>
+                
+        </section>
+        
+        <section id="reglages">
+            <div id="cadre">
+                <label>Side:</label>
+                <input type="range" min=4 max=50 step=2 id="cote" value=20 onchange="newRange()">
+                <input type="number" value="20" id="cote_txt" onchange="newTxt()">
+                <button id="default_cote">Default</button>
+            </div>
+            
+        </section>
+        
+        <section id=commandes>
+            <button id="start">Launch!</button>
+            <button id="nvPartie">New Game</button>
+        </section>
+        
+        <audio src="alumette.mp3" id="audioAlumette"></audio>
+        
+        
+    </body>
+    
+    
+    <script src="oneEn.js"></script>
+</html>
