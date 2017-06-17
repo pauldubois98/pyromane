@@ -75,7 +75,33 @@ p{
     padding-bottom: 0;
     margin-bottom: 0;
 }
-
+@media all and (min-width: 600px)
+{
+    p{
+        font-size: 1em;
+    }
+    #score{
+        font-size: 5em;
+    }
+}
+@media all and (min-width: 800px)
+{
+    p{
+        font-size: 1.2em;
+    }
+    #score{
+        font-size: 7em;
+    }
+}
+@media all and (min-width: 1000px)
+{
+    p{
+        font-size: 1.4em;
+    }
+    #score{
+        font-size: 9em;
+    }
+}
 
 
 
@@ -96,7 +122,6 @@ p{
 {
     #reglages{
         bottom: 0;
-
     }
 }
 #cadre{
@@ -146,6 +171,12 @@ label{
 {
     #commandes{
         justify-content: space-between;
+    }
+}
+@media all and (min-width: 1000px)
+{
+    #commandes{
+        justify-content: space-around;
     }
 }
 #start{
