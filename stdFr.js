@@ -45,7 +45,19 @@ function getWindowWidth() {
 
 var largEcran=getWindowWidth();
 var hautEcran=getWindowHeight();
-var taille = Math.min(largEcran, hautEcran);
+if(largEcran<600){
+    if(largEcran<hautEcran-110){
+        taille=largEcran
+    } else{
+        taille=hautEcran-110
+    }
+} else{
+    if(largEcran<hautEcran-70){
+
+    } else{
+        taille=hautEcran-70
+    }
+}
 
 
 

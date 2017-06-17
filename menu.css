@@ -95,3 +95,58 @@ img{
     right: 0;
     transform:  matrix(-1, 0, 0, 1, 0, 0);
 }
+
+
+
+
+
+
+
+@media all and (min-width: 600px)
+{
+    p{
+        font-size: 0.9em;
+    }
+    h1{
+        font-size: 2.3em;
+    }
+    #flame1{
+        left: 5%;
+    }
+
+    #flame2{
+        right: 5%;
+    }
+}
+@media all and (min-width: 800px)
+{
+    p{
+        font-size: 1.05em;
+    }
+    h1{
+        font-size: 2.8em;
+    }
+    #flame1{
+        left: 10%;
+    }
+
+    #flame2{
+        right: 10%;
+    }
+}
+@media all and (min-width: 1000px)
+{
+    p{
+        font-size: 1.2em;
+    }
+    h1{
+        font-size: 3em;
+    }
+    #flame1{
+        left: 15%;
+    }
+
+    #flame2{
+        right: 15%;
+    }
+}

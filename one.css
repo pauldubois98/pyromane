@@ -105,6 +105,13 @@ p{
     bottom: 2.1em;
     
 }
+@media all and (min-width: 600px)
+{
+    #reglages{
+        bottom: 0;
+
+    }
+}
 #cadre{
     display: flex;
     justify-content: center;
@@ -147,6 +154,12 @@ label{
     display: flex;
     justify-content: space-around;
     align-content: center;
+}
+@media all and (min-width: 600px)
+{
+    #commandes{
+        justify-content: space-between;
+    }
 }
 #start{
     font-size: 1.4em;

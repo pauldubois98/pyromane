@@ -54,6 +54,31 @@ p{
     
     color: white;
     text-align: justify;
+    margin-bottom: 0.5em;
+}
+@media all and (min-width: 600px)
+{
+    p{
+        width: 70%;
+        margin: auto;
+        margin-bottom: 0.5em;
+    }
+}
+@media all and (min-width: 800px)
+{
+    p{
+        width: 50%;
+        margin: auto;
+        margin-bottom: 0.5em;
+    }
+}
+@media all and (min-width: 1000px)
+{
+    p{
+        width: 40%;
+        margin: auto;
+        margin-bottom: 0.5em;
+    }
 }
 .paragraphe::first-letter{
     margin-left: 1em;
