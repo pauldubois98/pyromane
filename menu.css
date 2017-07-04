@@ -66,16 +66,19 @@ a{
     color: white;
     text-align: center;
 }
-#bt1{
+#btStd{
     background: red;
 }
-#bt2{
+#btOne{
     background: orange;
 }
-#bt3{
+#btMulti{
+    background: gold;
+}
+#btRules{
     background: grey;
 }
-#bt4{
+#btAbout{
     background: black;
 }
 

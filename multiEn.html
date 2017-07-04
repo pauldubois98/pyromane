@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The Pyromaniac Game</title>
+        <link rel="stylesheet" href="multi.css" />
+        <link rel="icon" type="image/png" href="icone512.png" />
+    </head>
+    <body>
+        <header>
+            <h1 id='title'>The Pyromaniac Game</h1>
+            <p><input id="nom" value="J0<"></p>
+        </header>
+        <canvas id="canvas">
+            Canvas not supported
+        </canvas>
+        
+        
+        
+        <section id="reglages">
+            <div id="cadre">
+                <label>Side:</label>
+                <input type="range" min=4 max=50 step=2 id="cote" value=20 onchange="newRange()">
+                <input type="number" value="20" id="cote_txt" onchange="newTxt()">
+                <button id="default_cote">Default</button>
+            </div>
+            
+        </section>
+
+        
+        <section id=commandes>
+            <button id="start">Launch!</button>
+            <button id="results">Results</button>
+            <button id="nvJoueur">New Player</button>
+        </section>
+        
+        <audio src="alumette.mp3" id="audioAlumette"></audio>
+        
+        <div id="classement">
+            <h1>The Pyromaniac Game</h1>
+            <div id="ranking">
+            </div>
+            
+            <div id="center"><button id="nvPartie">New Game</button></div>
+        </div>
+        
+        
+    </body>
+    
+    
+    <script src="multi.js"></script>
+</html>

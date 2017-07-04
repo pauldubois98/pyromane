@@ -45,25 +45,20 @@ function getWindowWidth() {
 
 var largEcran=getWindowWidth();
 var hautEcran=getWindowHeight();
-if(largEcran<600){
-    if(largEcran<hautEcran-110){
-        taille=largEcran
-    } else{
-        taille=hautEcran-110
-    }
+if(largEcran<hautEcran-140){
+    taille=largEcran
 } else{
-    if(largEcran<hautEcran-70){
-
-    } else{
-        taille=hautEcran-70
-    }
+    taille=hautEcran-140
 }
 
 
 
 var btStart = document.getElementById('start');
 var btNvPartie = document.getElementById('nvPartie');
-
+var btNvJoueur = document.getElementById('nvJoueur');
+var btResults = document.getElementById('results');
+var inputNom = document.getElementById('nom');
+/*
 var disp_cases_cote = document.getElementById('cases_cote');
 var disp_cases_total = document.getElementById('cases_total');
 var disp_arbres_debut = document.getElementById('arbres_debut');
@@ -74,6 +69,9 @@ var disp_pourcent_brules = document.getElementById('pourcent_brules');
 var disp_brules_par_feu = document.getElementById('brules_par_feu');
 var disp_score = document.getElementById('score');
 var disp_calcul = document.getElementById('calcul');
+*/
+var div_classement = document.getElementById('classement');
+var disp_ranking = document.getElementById('ranking');
 
 var playerAlumette = document.getElementById('audioAlumette');
 var playerFeu = document.getElementById('audioFeu');
@@ -81,8 +79,6 @@ var playerFeu = document.getElementById('audioFeu');
 var rangeCote = document.getElementById('cote');
 var cote_aff = document.getElementById('cote_txt');
 var btDefault = document.getElementById('default_cote');
-
-var section_medaille = document.getElementById('medal');
 
 var section_resultats = document.getElementById('resultats');
 var title = document.getElementById('title');
@@ -97,9 +93,10 @@ if (!context) {
 }
 
 
-
+var SCORES=[];
 
 var foret = [];
+var lastForet = [];
 var fires = 0;
 var nb_arbres_debut = 0;
 var nb_arbres_fin = 0;
@@ -108,7 +105,6 @@ var cote = 20;
 var started=false;
 var fireOn=false;
 var taille_cote = Math.floor(taille/cote);
-var medaille
 
 
 btDefault.onclick = function(e){
@@ -142,14 +138,18 @@ load();
 
 function nvlleForet() {
     if(fireOn==false){
+        div_classement.style.display = 'none';
+        disp_ranking.innerHTML = "";
+        SCORES=[];
+        inputNom.value="J"+SCORES.length;
         foret=[];
+        lastForet=[];
         started=false;
         fireOn=false;
         nb_arbres_debut=0;
         fires = 0;
         title.style.color = 'green';
-        section_resultats.style.display = 'none';
-        section_medaille.style.display = 'none';
+        //section_resultats.style.display = 'none';
 
         //tout blanc:
         context.fillStyle = "white";
@@ -158,12 +158,56 @@ function nvlleForet() {
         //nouvelle forêt:
         for(j=0; j<cote; j++){
             var ligne=[];
+            var lignebis=[];
             for(i=0; i<cote; i++){
                 if(Math.random()<prob){
                     ligne.push(1);
+                    lignebis.push(1);
                     context.fillStyle = "green";
                     nb_arbres_debut++;
                 }else{
+                    ligne.push(0);
+                    lignebis.push(0);
+                    context.fillStyle = "white";
+                }
+                context.fillRect(i*taille_cote, j*taille_cote, taille_cote, taille_cote);
+            }
+            foret.push(ligne);
+            //lignebis.push('toto')
+            lastForet.push(lignebis);
+        }
+    }
+}
+//nouvelle partie
+btNvPartie.onclick = nvlleForet
+//début
+nvlleForet()
+
+
+btNvJoueur.onclick = function(){
+    if(fireOn==false){
+        inputNom.value="J"+SCORES.length;
+        foret=[]
+        nb_arbres_debut=0;
+        started=false;
+        fireOn=false;
+        fires = 0;
+        title.style.color = 'green';
+        //section_resultats.style.display = 'none';
+
+        //tout blanc:
+        context.fillStyle = "white";
+        context.fillRect(0, 0, taille, taille);
+
+        //chargement forêt:
+        for(j=0; j<cote; j++){
+            var ligne=[];
+            for(i=0; i<cote; i++){
+                if(lastForet[j][i]===1){
+                    ligne.push(1);
+                    context.fillStyle = "green";
+                    nb_arbres_debut++;
+                } else{
                     ligne.push(0);
                     context.fillStyle = "white";
                 }
@@ -173,10 +217,8 @@ function nvlleForet() {
         }
     }
 }
-//nouvelle partie
-btNvPartie.onclick = nvlleForet
-//début
-nvlleForet()
+
+
 
 
 
@@ -334,85 +376,37 @@ function resultats() {
     var score = nb_arbres_brules-cote*0.5*fires;
 
 
-
+    
     /////AFFICHAGE
-    section_resultats.style.display = 'block';
-    
-    
-    disp_cases_cote.innerHTML="lado del fresadora " + cote;    
-    
-    if(nb_arbres_debut<=1){
-        disp_arbres_debut.innerHTML="árbole al comienzan " + nb_arbres_debut;
-    } else{
-        disp_arbres_debut.innerHTML="árboles al comienzan " + nb_arbres_debut;
-    }
-
-    if(nb_arbres_brules<=1){
-        disp_arbres_brules.innerHTML="árbole quemado " + nb_arbres_brules;
-    } else{
-        disp_arbres_brules.innerHTML="árboles quemados " + nb_arbres_brules;
-    }
-
-    if(fires<=1){
-        disp_feux_utilises.innerHTML="fuego utilizado " + fires;
-    } else{
-        disp_feux_utilises.innerHTML="fuegos utilizados " + fires;
-    }
-    
-    /////////////////////////////////////////////////////////////////////////////////////
-    disp_cases_total.innerHTML=(cote*cote).toString() + " cuadrados en todos";
-
-    if(nb_arbres_fin<=1){
-        disp_arbres_fin.innerHTML=nb_arbres_fin + " árbole al final";
-    } else{
-        disp_arbres_fin.innerHTML=nb_arbres_fin + " árboles al final";
-    }
-
-    disp_pourcent_brules.innerHTML=pourcent_brules + " % quemado";
-
-    if(brule_par_feu<=1){
-        disp_brules_par_feu.innerHTML=brule_par_feu + " quemado/fuego"
-    } else{
-        disp_brules_par_feu.innerHTML=brule_par_feu + " quemados/fuego"
-    }
-    
-    disp_score.innerHTML=score;
-    disp_calcul.innerHTML='(' + nb_arbres_brules + '-'+cote/2+'*' + fires + ')';
-    
-    
-    /////////////////////////////////////////////////////////////////////////////////////
-    medaille='sinMedalla.png'
     if(score>200){
-        medaille='trump.png'
+        SCORES.push("<div class='ligne'><img src='trump.png' alt='medal' class='medal'><p><span class='nomJoueur'>" + inputNom.value + "</span>: <span class='scoreJoueur'>" + score +"</span></p></div>");
     }
     else if (score>180){
-        medaille='Poutine.png'
+        SCORES.push("<div class='ligne'><img src='Poutine.png' alt='medal' class='medal'><p><span class='nomJoueur'>" + inputNom.value + "</span>: <span class='scoreJoueur'>" + score +"</span></p></div>");
     }
     else if (score>150){
-        medaille='Jinping.png'
+        SCORES.push("<div class='ligne'><img src='Jinping.png' alt='medal' class='medal'><p><span class='nomJoueur'>" + inputNom.value + "</span>: <span class='scoreJoueur'>" + score +"</span></p></div>");
     }
     else if (score<0){
-        medaille='WWF.png'
+        SCORES.push("<div class='ligne'><img src='WWF.png' alt='medal' class='medal'><p><span class='nomJoueur'>" + inputNom.value + "</span>: <span class='scoreJoueur'>" + score +"</span></p></div>");
     }
     else if (score<50){
-        medaille='greenPeace.png'
+        SCORES.push("<div class='ligne'><img src='greenPeace.png' alt='medal' class='medal'><p><span class='nomJoueur'>" + inputNom.value + "</span>: <span class='scoreJoueur'>" + score +"</span></p></div>");
     }
-    
+    else{
+        SCORES.push("<div class='ligne'><img src='vide.png' alt='medal' class='medal'><p><span class='nomJoueur'>" + inputNom.value + "</span>: <span class='scoreJoueur'>" + score +"</span></p></div>");    }
     
     fireOn=false;
 }
 
 
+btResults.onclick = function classement() {
+    if(fireOn==false){
+        div_classement.style.display = 'block';
 
-section_resultats.onclick = function(e){
-    section_resultats.style.display = 'none';
-    section_medaille.style.display = 'flex';
-    section_medaille.innerHTML ='<img id="imageMedal" alt="medaille" src='+medaille+'>'
-
-}
-
-
-section_medaille.onclick = function(e){
-    section_resultats.style.display = 'block';
-    section_medaille.style.display = 'none';
+        for(var i=0; i<SCORES.length; i++) {
+            disp_ranking.innerHTML += SCORES[i];
+            //disp_ranking.innerHTML += "<br>";
+        }
+    }
 }

@@ -1,90 +1,110 @@
+var delai4=250;
+var delai3=500;
+var delai2=750;
+var delai1=1000;
 
 
-var btStd = document.getElementById('bt1');
-var bt1feu = document.getElementById('bt2');
-var btRegles = document.getElementById('bt3');
-var btAbout = document.getElementById('bt4');
-
-
-
-$("#bt1").click(function(e) {
+$("#btStd").click(function(e) {
     e.preventDefault();
     $("#flame1").hide();
     $("#flame2").hide();
-    $("#bt2").animate({opacity: 0}, 1500);
-    $("#bt3").animate({opacity: 0}, 1000);
-    $("#bt4").animate({opacity: 0}, 500);
+    $("#btOne").animate({opacity: 0}, delai1);
+    $("#btMulti").animate({opacity: 0}, delai2);
+    $("#btRules").animate({opacity: 0}, delai3);
+    $("#btAbout").animate({opacity: 0}, delai4);
 
     
     setTimeout(function () {
-        $('#allBlanc').animate({opacity: 0}, 250);
-        //$("#bt1").animate({fontSize: 40}, 1000);
-    }, 1250);
+        $('#allBlanc').animate({opacity: 0}, delai4);
+        //$("#btStd").animate({fontSize: 40}, delai2);
+    }, delai1-delai4);
     
     setTimeout(function () {
         document.location.href="stdFr.html"
-    }, 1500);
+    }, delai1);
 })
 
 
-$("#bt2").click(function(e) {
+$("#btOne").click(function(e) {
     e.preventDefault();
     $("#flame1").hide();
     $("#flame2").hide();
-    $("#bt1").animate({opacity: 0}, 1500);
-    $("#bt3").animate({opacity: 0}, 1500);
-    $("#bt4").animate({opacity: 0}, 1000);
+    $("#btStd").animate({opacity: 0}, delai1);
+    $("#btMulti").animate({opacity: 0}, delai1);
+    $("#btRules").animate({opacity: 0}, delai2);
+    $("#btAbout").animate({opacity: 0}, delai3);
 
     
     setTimeout(function () {
-        $('#allBlanc').animate({opacity: 0}, 250);
-        //$("#bt2").animate({fontSize: 40}, 1000);
-    }, 1250);
+        $('#allBlanc').animate({opacity: 0}, delai4);
+        //$("#btOne").animate({fontSize: 40}, delai2);
+    }, delai1-delai4);
     
     setTimeout(function () {
         document.location.href="oneFr.html"
-    }, 1500);
+    }, delai1);
 })
 
 
-$("#bt3").click(function(e) {
+$("#btMulti").click(function(e) {
     e.preventDefault();
     $("#flame1").hide();
     $("#flame2").hide();
-    $("#bt1").animate({opacity: 0}, 1000);
-    $("#bt2").animate({opacity: 0}, 1500);
-    $("#bt4").animate({opacity: 0}, 1500);
+    $("#btStd").animate({opacity: 0}, delai2);
+    $("#btOne").animate({opacity: 0}, delai1);
+    $("#btRules").animate({opacity: 0}, delai1);
+    $("#btAbout").animate({opacity: 0}, delai2);
 
     
     setTimeout(function () {
-        $('#allNoir').animate({opacity: 0}, 250);
-        //$("#bt3").animate({fontSize: 40}, 1000);
-    }, 1250);
+        $('#allNoir').animate({opacity: 0}, delai4);
+        //$("#btRules").animate({fontSize: 40}, delai2);
+    }, delai1-delai4);
+    
+    setTimeout(function () {
+        document.location.href="multiFr.html"
+    }, delai1);
+})
+
+
+$("#btRules").click(function(e) {
+    e.preventDefault();
+    $("#flame1").hide();
+    $("#flame2").hide();
+    $("#btStd").animate({opacity: 0}, delai3);
+    $("#btOne").animate({opacity: 0}, delai2);
+    $("#btMulti").animate({opacity: 0}, delai1);
+    $("#btAbout").animate({opacity: 0}, delai1);
+
+    
+    setTimeout(function () {
+        $('#allNoir').animate({opacity: 0}, delai4);
+        //$("#btRules").animate({fontSize: 40}, delai2);
+    }, delai1-delai4);
     
     setTimeout(function () {
         document.location.href="rulesFr.html"
-    }, 1500);
+    }, delai1);
 })
 
 
-
-
-$("#bt4").click(function(e) {
+$("#btAbout").click(function(e) {
     e.preventDefault();
     $("#flame1").hide();
     $("#flame2").hide();
-    $("#bt3").animate({opacity: 0}, 1500);
-    $("#bt2").animate({opacity: 0}, 1000);
-    $("#bt1").animate({opacity: 0}, 500);
+    $("#btStd").animate({opacity: 0}, delai4);
+    $("#btOne").animate({opacity: 0}, delai3);
+    $("#btMulti").animate({opacity: 0}, delai2);
+    $("#btRules").animate({opacity: 0}, delai1);
 
     
     setTimeout(function () {
-        $('#allNoir').animate({opacity: 0}, 250);
-        //$("#bt4").animate({fontSize: 40}, 1000);
-    }, 1250);
+        $('#allNoir').animate({opacity: 0}, delai4);
+        //$("#btAbout").animate({fontSize: 40}, delai2);
+    }, delai1-delai4);
     
     setTimeout(function () {
         document.location.href="aboutFr.html"
-    }, 1500);
+    }, delai1);
 })
 

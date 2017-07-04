@@ -83,6 +83,8 @@ var rangeCote = document.getElementById('cote');
 var cote_aff = document.getElementById('cote_txt');
 var btDefault = document.getElementById('default_cote');
 
+var section_medaille = document.getElementById('medal');
+
 var section_resultats = document.getElementById('resultats');
 var title = document.getElementById('title');
 
@@ -107,6 +109,7 @@ var cote = 20;
 var started=false;
 var fireOn=false;
 var taille_cote = Math.floor(taille/cote);
+var medaille
 
 
 btDefault.onclick = function(e){
@@ -147,6 +150,7 @@ function nvlleForet() {
         fires = 0;
         title.style.color = 'green';
         section_resultats.style.display = 'none';
+        section_medaille.style.display = 'none';
 
         //tout blanc:
         context.fillStyle = "white";
@@ -377,5 +381,37 @@ function resultats() {
     disp_calcul.innerHTML='(' + nb_arbres_brules + '-'+cote/2+'*' + fires + ')';
     
     
+    /////////////////////////////////////////////////////////////////////////////////////
+    medaille='aucuneMedaille.png'
+    if(score>200){
+        medaille='trump.png'
+    }
+    else if (score>180){
+        medaille='Poutine.png'
+    }
+    else if (score>150){
+        medaille='Jinping.png'
+    }
+    else if (score<0){
+        medaille='WWF.png'
+    }
+    else if (score<50){
+        medaille='greenPeace.png'
+    }
+    
     fireOn=false;
+}
+
+
+section_resultats.onclick = function(e){
+    section_resultats.style.display = 'none';
+    section_medaille.style.display = 'flex';
+    section_medaille.innerHTML ='<img id="imageMedal" alt="medaille" src='+medaille+'>'
+
+}
+
+
+section_medaille.onclick = function(e){
+    section_resultats.style.display = 'block';
+    section_medaille.style.display = 'none';
 }
