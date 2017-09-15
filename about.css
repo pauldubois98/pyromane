@@ -100,6 +100,13 @@ p{
 
 
 
+#space{
+    height: 5em;
+}
+
+
+
+
 #bts{    
     margin: 0;
     padding: 0;
@@ -108,18 +115,18 @@ p{
     width: 100%;
     
     position: fixed;
-    bottom: 0.2em;
+    bottom: 0;
     
     display: flex;
     justify-content: center;
-    align-content: center;
+    
+    background-color: rgba(0, 0, 0, .8);
 }
 .bt{
     font-family: feuBis;
     font-weight: bold;
     padding: 0.2em;
     margin: auto;
-    margin-top: 1em;
     font-size: 1.4em;
     text-align: center;
     width: 7em;
@@ -132,8 +139,8 @@ a{
     text-align: center;
 }
 #bt1{
-    background: black;
+    background: grey;
 }
 #bt2{
-    background: grey;
+    background: black;
 }
